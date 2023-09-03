@@ -6,7 +6,7 @@ public class EnvironmentInteractable : MonoBehaviour
     public bool IsOneTimeInteractable = false;
 
     private BoxCollider2D _boxCollider2D;
-    public GameObject UiElement;
+    public GameObject _uiElement;
 
     private void Awake()
     {
@@ -15,14 +15,14 @@ public class EnvironmentInteractable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (UiElement != null)
-            UiElement.SetActive(true);
+        if (_uiElement != null)
+            _uiElement.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (UiElement != null)
-            UiElement.SetActive(false);
+        if (_uiElement != null)
+            _uiElement.SetActive(false);
     }
 
     private void DeactivateBoxCollider() => _boxCollider2D.enabled = false;
