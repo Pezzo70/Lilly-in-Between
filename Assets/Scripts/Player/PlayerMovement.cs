@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-       _animator = this.gameObject.GetComponent<Animator>();
+        _animator = this.gameObject.GetComponent<Animator>();
     }
 
     private void Update()
@@ -22,9 +22,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnMove(InputValue inputValue)
     {
+        Debug.Log("Teste");
         _movementInput = inputValue.Get<Vector2>();
     }
-
 
     private void SetAnimation()
     {
