@@ -8,8 +8,6 @@ public class PlayerManager : MonoBehaviour
 
     public void Start()
     {
-        roomMessagesManager = GetComponent<RoomMessagesManager>();
-
-        roomMessagesManager.SetMessage(0);
+        roomMessagesManager.SetMessage(0,3);
     }
 }
