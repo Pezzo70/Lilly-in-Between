@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private float _speed;
+    public GameObject TextPanel;
 
     private Animator _animator;
     private Vector2 _movementInput;
@@ -16,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (TextPanel.activeInHierarchy) return;
         this.transform.position += new Vector3(_movementInput.x, _movementInput.y, 0) * _speed * Time.deltaTime;
         SetAnimation();
     }

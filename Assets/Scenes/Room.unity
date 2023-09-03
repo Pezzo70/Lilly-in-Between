@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 0
-  _uiElement: {fileID: 0}
+  _uiElement: {fileID: 572832409}
 --- !u!1 &198659435
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 0
-  _uiElement: {fileID: 0}
+  _uiElement: {fileID: 572832409}
 --- !u!1 &206742128
 GameObject:
   m_ObjectHideFlags: 0
@@ -2388,7 +2388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 0
-  _uiElement: {fileID: 0}
+  _uiElement: {fileID: 572832409}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2497,7 +2497,7 @@ Camera:
   far clip plane: 1000
   field of view: 40
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 5.625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3036,7 +3036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 0
-  _uiElement: {fileID: 0}
+  _uiElement: {fileID: 572832409}
 --- !u!1 &783090732
 GameObject:
   m_ObjectHideFlags: 0
@@ -3128,7 +3128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 1
-  _uiElement: {fileID: 0}
+  _uiElement: {fileID: 572832409}
 --- !u!1 &819918214
 GameObject:
   m_ObjectHideFlags: 0
@@ -3220,7 +3220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 0
-  _uiElement: {fileID: 0}
+  _uiElement: {fileID: 572832409}
 --- !u!1 &997579240
 GameObject:
   m_ObjectHideFlags: 0
@@ -4452,6 +4452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 4
+  TextPanel: {fileID: 1568565202}
 --- !u!50 &1550178598
 Rigidbody2D:
   serializedVersion: 4
@@ -4627,7 +4628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 0
-  _uiElement: {fileID: 0}
+  _uiElement: {fileID: 572832409}
 --- !u!1 &1567366212
 GameObject:
   m_ObjectHideFlags: 0
