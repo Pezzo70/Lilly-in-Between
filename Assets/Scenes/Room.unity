@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 0
-  _uiElement: {fileID: 572832409}
+  UiElement: {fileID: 572832409}
 --- !u!1 &198659435
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 0
-  _uiElement: {fileID: 572832409}
+  UiElement: {fileID: 572832409}
 --- !u!1 &206742128
 GameObject:
   m_ObjectHideFlags: 0
@@ -2171,17 +2171,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lilly: estou escutando gritos vindo da sala...
-
-    acho que o papai e
-    a mami voltaram a brigar...
-
-
-    * NUNCA MAIS QUERO TE VER! *
-
-
-    lILLY: aCHO
-    QUE A MAMI GRITOU COM O PAPAI...'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 62371f629b8d63c469916286202597d6, type: 2}
   m_sharedMaterial: {fileID: 8142187269441881844, guid: 62371f629b8d63c469916286202597d6, type: 2}
@@ -2398,7 +2388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 0
-  _uiElement: {fileID: 572832409}
+  UiElement: {fileID: 572832409}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3046,7 +3036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 0
-  _uiElement: {fileID: 572832409}
+  UiElement: {fileID: 572832409}
 --- !u!1 &783090732
 GameObject:
   m_ObjectHideFlags: 0
@@ -3138,7 +3128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 1
-  _uiElement: {fileID: 572832409}
+  UiElement: {fileID: 572832409}
 --- !u!1 &819918214
 GameObject:
   m_ObjectHideFlags: 0
@@ -3230,7 +3220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 0
-  _uiElement: {fileID: 572832409}
+  UiElement: {fileID: 572832409}
 --- !u!1 &997579240
 GameObject:
   m_ObjectHideFlags: 0
@@ -4292,6 +4282,52 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1185929750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1185929752}
+  - component: {fileID: 1185929753}
+  m_Layer: 0
+  m_Name: MessagesManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1185929752
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185929750}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.383074, y: 1.9349399, z: -0.8119825}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1185929753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185929750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f22549bc7ca1294d88fb31cf6270101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  msgs: {fileID: 11400000, guid: 0057533f9d992e54c8367f0441c29da1, type: 2}
+  uiText: {fileID: 343936673}
 --- !u!1 &1550178592
 GameObject:
   m_ObjectHideFlags: 0
@@ -4608,7 +4644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 0
-  _uiElement: {fileID: 572832409}
+  UiElement: {fileID: 572832409}
 --- !u!1 &1567366212
 GameObject:
   m_ObjectHideFlags: 0
@@ -4730,7 +4766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1568565203
 RectTransform:
   m_ObjectHideFlags: 0
