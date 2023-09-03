@@ -15,5 +15,7 @@ MonoBehaviour:
   currentText: 0
   MessagesText:
   - 'Lilly: estou escutando gritos vindo da sala... acho que o papai e a mami voltaram
-    a brigar...  * NUNCA MAIS QUERO TE VER! *  lILLY: aCHO QUE A MAMI GRITOU COM
-    O PAPAI...'
+    a brigar...'
+  - '* NUNCA MAIS QUERO TE VER! *'
+  - 'Lilly: acho que mami gritou com o papai...'
+  - '-'
