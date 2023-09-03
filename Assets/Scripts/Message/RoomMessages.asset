@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ebcb89e744f83c41beb7b2f1824d5ee, type: 3}
   m_Name: RoomMessages
   m_EditorClassIdentifier: 
+  currentText: 0
   MessagesText:
   - 'Lilly: estou escutando gritos vindo da sala... acho que o papai e a mami voltaram
     a brigar...  * NUNCA MAIS QUERO TE VER! *  lILLY: aCHO QUE A MAMI GRITOU COM
