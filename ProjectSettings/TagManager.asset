@@ -6,6 +6,7 @@ TagManager:
   tags:
   - UIInteractWith
   - UIText
+  - Bed
   layers:
   - Default
   - TransparentFX

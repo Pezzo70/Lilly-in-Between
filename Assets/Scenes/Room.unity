@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 0
-  _uiElement: {fileID: 572832409}
+  _uiElement: {fileID: 0}
 --- !u!1 &198659435
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 0
-  _uiElement: {fileID: 572832409}
+  _uiElement: {fileID: 0}
 --- !u!1 &206742128
 GameObject:
   m_ObjectHideFlags: 0
@@ -2388,7 +2388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 0
-  _uiElement: {fileID: 572832409}
+  _uiElement: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2497,7 +2497,7 @@ Camera:
   far clip plane: 1000
   field of view: 40
   orthographic: 1
-  orthographic size: 5.625
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3050,7 +3050,7 @@ GameObject:
   - component: {fileID: 783090735}
   m_Layer: 0
   m_Name: Bed
-  m_TagString: Untagged
+  m_TagString: Bed
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3220,7 +3220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 0
-  _uiElement: {fileID: 572832409}
+  _uiElement: {fileID: 0}
 --- !u!1 &997579240
 GameObject:
   m_ObjectHideFlags: 0
@@ -4299,6 +4299,7 @@ GameObject:
   - component: {fileID: 1550178599}
   - component: {fileID: 1550178600}
   - component: {fileID: 1550178601}
+  - component: {fileID: 1550178602}
   m_Layer: 0
   m_Name: Lilly
   m_TagString: Untagged
@@ -4522,7 +4523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f22549bc7ca1294d88fb31cf6270101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  msgs: {fileID: 11400000, guid: 0057533f9d992e54c8367f0441c29da1, type: 2}
+  messages: {fileID: 11400000, guid: 0057533f9d992e54c8367f0441c29da1, type: 2}
   uiText: {fileID: 1568565202}
 --- !u!114 &1550178601
 MonoBehaviour:
@@ -4537,6 +4538,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomMessagesManager: {fileID: 1550178600}
+  enviromentManager: {fileID: 0}
+  interactedItem: {fileID: 0}
+--- !u!114 &1550178602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550178592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41a9fd87282c76e45b5bf047e1c9b8a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enviromentItens: {fileID: 1763213520}
 --- !u!1 &1561793855
 GameObject:
   m_ObjectHideFlags: 0
@@ -4628,7 +4644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 0
-  _uiElement: {fileID: 572832409}
+  _uiElement: {fileID: 0}
 --- !u!1 &1567366212
 GameObject:
   m_ObjectHideFlags: 0
