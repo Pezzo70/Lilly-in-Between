@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="background-color: rgba(0, 0, 0, 0); align-items: flex-start; flex-grow: 1;" />
+    <ui:VisualElement name="Box" style="background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/Sprites/TextBox.png?fileID=2800000&amp;guid=59a174439dccbbb4eb2fc0cbb082d469&amp;type=3#TextBox&apos;); flex-basis: 0; flex-grow: 0.5; width: 192px; justify-content: flex-start; height: 128px; align-self: center;">
+        <ui:Label tabindex="-1" text="Teste" display-tooltip-when-elided="true" enable-rich-text="true" name="Text" style="height: 89px; width: 147px; font-size: 14px; color: rgb(0, 0, 0); -unity-font: resource(&apos;FlatSkin/Font/Roboto-Regular&apos;); position: relative; top: 25px; left: 19px; -unity-font-style: bold;" />
+    </ui:VisualElement>
+</ui:UXML>
