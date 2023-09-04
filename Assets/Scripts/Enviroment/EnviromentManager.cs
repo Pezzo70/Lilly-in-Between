@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +11,16 @@ public class EnviromentManager : MonoBehaviour
     public RoomMessagesManager roomMessagesManager;
     public ParticleSystem particle;
 
+    private bool test = false;
+
     public void Start()
     {
         
     }
 
     public void OnInteract(GameObject interactedItem)
-    {  
+    {
+        Debug.Log(interactedItem.name);
         switch (interactedItem.name)
         {
             case "Bed":
@@ -30,6 +34,7 @@ public class EnviromentManager : MonoBehaviour
             }
             case "Wardrobe": 
                 {
+                    test = true;
                     interactedItem.GetComponent<BoxCollider2D>().enabled = false;
                     roomMessagesManager.SetMessage(4, 5, () => FindCollectable("Diary"));
                     break; 
@@ -77,10 +82,7 @@ public class EnviromentManager : MonoBehaviour
 
     public void FindCollectable(string name) 
     {
-
         var obj = enviromentItens.transform.Find("Collectables").Find(name);
-        if (obj is null) Debug.Log("IOhaaa");
-
         GameObject collectable = enviromentItens.transform.Find("Collectables").Find(name).gameObject;
         collectable.SetActive(true);
         StartCoroutine(AnimateItem(collectable));

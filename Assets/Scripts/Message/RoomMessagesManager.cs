@@ -17,19 +17,25 @@ public class RoomMessagesManager : MonoBehaviour
     public TextMeshProUGUI TextMesh => uiText.GetComponentInChildren<TextMeshProUGUI>();
     public Coroutine coroutine;
 
+    private Action messageCallback;
+    private float messageTimer;
+
     void Start()
     {
         uiText.SetActive(false);
     }
 
-    public void SetMessage(int messageIndex, int timer = 5, Action func = null)
+    public void SetMessage(int messageIndex, float timer = 5, Action func = null)
     {
+        messageCallback = func;
+        messageTimer = timer;
+
         if (coroutine != null)
             StopMessages();
-        coroutine = StartCoroutine(MessageCoroutine(messageIndex, timer, func));
+        coroutine = StartCoroutine(MessageCoroutine(messageIndex));
     }
 
-    private IEnumerator MessageCoroutine(int messageIndex, int timer = 6, Action func = null)
+    private IEnumerator MessageCoroutine(int messageIndex)
     {
         this.MessageIndex = messageIndex;
         uiText.SetActive(true);
@@ -37,10 +43,12 @@ public class RoomMessagesManager : MonoBehaviour
         while (MessageIndex <= messages.MessagesText.Length - 1 && !Message.Equals("-"))
         {
             TextMesh.text = Message;
-            yield return new WaitForSeconds(timer);
+            yield return new WaitForSeconds(messageTimer);
             this.MessageIndex++;
         }
-        func?.Invoke();
+
+        if(messageCallback != null)
+            messageCallback.Invoke();
 
         this.StopMessages();
     }
@@ -59,7 +67,7 @@ public class RoomMessagesManager : MonoBehaviour
     public void ShowNextMessage()
     {
         if (this.MessageIndex != -1 && this.MessageIndex < messages.MessagesText.Length - 1 && !Message.Equals("-"))
-            SetMessage(++this.MessageIndex);
+            SetMessage(++this.MessageIndex, messageTimer, messageCallback);
         else
             StopMessages();
     }
