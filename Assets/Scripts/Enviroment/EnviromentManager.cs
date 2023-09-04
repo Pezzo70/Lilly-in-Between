@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,9 @@ public class EnviromentManager : MonoBehaviour
     public GameObject enviromentItens;
     public RoomMessagesManager roomMessagesManager;
     public ParticleSystem particle;
+    public GameObject collectiblesUI;
+
+    private bool test = false;
 
     private bool bearAlreadyInteracted = false;
 
@@ -32,13 +36,18 @@ public class EnviromentManager : MonoBehaviour
                 {
                     interactedItem.gameObject.GetComponent<BoxCollider2D>().enabled = false;
                     string[] dreamItens = new string[] { "Wardrobe", "Chest", "Desk", "Plant", "Books", "Toys" };
+
                     foreach (var item in dreamItens)
                         enviromentItens.transform.Find(item).gameObject.SetActive(true);
+
+                    foreach(var child in this.collectiblesUI.GetComponentsInChildren<Transform>())
+                        child.gameObject.SetActive(true);
 
                     break;
                 }
             case "Wardrobe":
                 {
+                    test = true;
                     interactedItem.GetComponent<BoxCollider2D>().enabled = false;
                     roomMessagesManager.SetMessage(4, 5, () => FindCollectable("Diary"));
                     break;
@@ -100,10 +109,7 @@ public class EnviromentManager : MonoBehaviour
 
     public void FindCollectable(string name)
     {
-
         var obj = enviromentItens.transform.Find("Collectables").Find(name);
-        if (obj is null) Debug.Log("IOhaaa");
-
         GameObject collectable = enviromentItens.transform.Find("Collectables").Find(name).gameObject;
         collectable.SetActive(true);
         StartCoroutine(AnimateItem(collectable));
@@ -111,12 +117,15 @@ public class EnviromentManager : MonoBehaviour
 
     public IEnumerator AnimateItem(GameObject collectable)
     {
+        collectable.GetComponent<Collider2D>().enabled= false;
         collectable.GetComponent<SpriteRenderer>().sortingOrder = 7;
 
         Vector2 initialPosition = collectable.transform.position;
         Vector2 vector = initialPosition;
+
         float seconds = 0.03f;
         float movement = 0.25f;
+
         do
         {
             collectable.transform.position = vector;
@@ -139,5 +148,6 @@ public class EnviromentManager : MonoBehaviour
         } while (vector.y <= initialPosition.y);
 
         collectable.GetComponent<SpriteRenderer>().sortingOrder = 5;
+        collectable.GetComponent<Collider2D>().enabled = true;
     }
 }
