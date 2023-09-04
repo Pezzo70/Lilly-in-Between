@@ -20,7 +20,9 @@ public class EnviromentManager : MonoBehaviour
 
     public void Awake()
     {
-        GameObject.FindGameObjectWithTag("HeartsManager").TryGetComponent<HeartsManager>(out _heartsManager);
+        var gameObj = GameObject.FindGameObjectWithTag("HeartsManager");
+        if (gameObj != null)
+            gameObj.TryGetComponent<HeartsManager>(out _heartsManager);
     }
 
     public void Start()
@@ -40,7 +42,7 @@ public class EnviromentManager : MonoBehaviour
                     foreach (var item in dreamItens)
                         enviromentItens.transform.Find(item).gameObject.SetActive(true);
 
-                    foreach(var child in this.collectiblesUI.GetComponentsInChildren<Transform>())
+                    foreach (var child in this.collectiblesUI.GetComponentsInChildren<Transform>())
                         child.gameObject.SetActive(true);
 
                     break;
@@ -117,7 +119,7 @@ public class EnviromentManager : MonoBehaviour
 
     public IEnumerator AnimateItem(GameObject collectable)
     {
-        collectable.GetComponent<Collider2D>().enabled= false;
+        collectable.GetComponent<Collider2D>().enabled = false;
         collectable.GetComponent<SpriteRenderer>().sortingOrder = 7;
 
         Vector2 initialPosition = collectable.transform.position;
