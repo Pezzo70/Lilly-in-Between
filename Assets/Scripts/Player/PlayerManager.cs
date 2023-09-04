@@ -6,11 +6,16 @@ public class PlayerManager : MonoBehaviour
 {
     public RoomMessagesManager roomMessagesManager;
     public EnviromentManager enviromentManager;
-
+    private SpriteRenderer _spriteRenderer;
 
     public GameObject interactedItem;
 
-    public void Start()
+    private void Awake()
+    {
+        _spriteRenderer = this.GetComponent<SpriteRenderer>();
+    }
+
+    private void Start()
     {
         roomMessagesManager.SetMessage(0, 3);
     }
@@ -25,8 +30,34 @@ public class PlayerManager : MonoBehaviour
             enviromentManager.OnInteract(interactedItem);
     }
 
-    public void OnTriggerEnter2D(Collider2D colission) => interactedItem = colission.gameObject;
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        interactedItem = collision.gameObject;
+        if (collision.gameObject.tag == "Man")
+        {
+            if (this.transform.position.y > collision.gameObject.transform.position.y)
+                _spriteRenderer.sortingOrder = 6;
+            else if (this.transform.position.y < collision.gameObject.transform.position.y)
+                _spriteRenderer.sortingOrder = 7;
+        }
 
+    }
 
-    public void OnTriggerExit2D(Collider2D collision) => interactedItem = null;
+    public void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Man")
+        {
+            if (this.transform.position.y > other.gameObject.transform.position.y)
+                _spriteRenderer.sortingOrder = 6;
+            else if (this.transform.position.y < other.gameObject.transform.position.y)
+                _spriteRenderer.sortingOrder = 7;
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        interactedItem = null;
+        if (collision.gameObject.tag == "Man")
+            _spriteRenderer.sortingOrder = 6;
+    }
 }

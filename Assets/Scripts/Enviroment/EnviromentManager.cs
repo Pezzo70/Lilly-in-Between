@@ -15,63 +15,62 @@ public class EnviromentManager : MonoBehaviour
 
     public void Start()
     {
-        
+
     }
 
     public void OnInteract(GameObject interactedItem)
     {
-        Debug.Log(interactedItem.name);
         switch (interactedItem.name)
         {
             case "Bed":
-            {
-                interactedItem.gameObject.GetComponent<BoxCollider2D>().enabled = false;
-                string[] dreamItens = new string[] { "Wardrobe", "Chest", "Desk", "Plant", "Books", "Toys" };
-                foreach (var item in dreamItens)
-                    enviromentItens.transform.Find(item).gameObject.SetActive(true);
+                {
+                    interactedItem.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                    string[] dreamItens = new string[] { "Wardrobe", "Chest", "Desk", "Plant", "Books", "Toys" };
+                    foreach (var item in dreamItens)
+                        enviromentItens.transform.Find(item).gameObject.SetActive(true);
 
-                break;
-            }
-            case "Wardrobe": 
+                    break;
+                }
+            case "Wardrobe":
                 {
                     test = true;
                     interactedItem.GetComponent<BoxCollider2D>().enabled = false;
                     roomMessagesManager.SetMessage(4, 5, () => FindCollectable("Diary"));
-                    break; 
+                    break;
                 }
-            case "Chest": 
+            case "Chest":
                 {
                     interactedItem.GetComponent<BoxCollider2D>().enabled = false;
-                    roomMessagesManager.SetMessage(7,5, () => FindCollectable("Ball"));
-                    break; 
+                    roomMessagesManager.SetMessage(7, 5, () => FindCollectable("Ball"));
+                    break;
                 }
-            case "Desk": 
+            case "Desk":
                 {
                     interactedItem.GetComponent<BoxCollider2D>().enabled = false;
                     roomMessagesManager.SetMessage(13, 5, () => FindCollectable("ToyOctopus"));
-                    break; 
+                    break;
                 }
-            case "Plant": 
-                { 
+            case "Plant":
+                {
                     interactedItem.GetComponent<BoxCollider2D>().enabled = false;
-                    roomMessagesManager.SetMessage(18,5, () => FindCollectable("SparkKey"));
-                    break; 
+                    roomMessagesManager.SetMessage(18, 5, () => FindCollectable("SparkKey"));
+                    break;
                 }
-            case "Books": 
+            case "Books":
                 {
                     interactedItem.GetComponent<BoxCollider2D>().enabled = false;
                     roomMessagesManager.SetMessage(15);
-                    break; 
+                    break;
                 }
-            case "Toys": 
+            case "Toys":
                 {
                     interactedItem.GetComponent<BoxCollider2D>().enabled = false;
                     roomMessagesManager.SetMessage(10);
-                    break; 
+                    break;
                 }
-            case "ToyOctopus": 
-            case "Diary": 
-            case "Ball": 
+            case "ToyOctopus":
+            case "Diary":
+            case "Ball":
             case "SparkKey":
                 Destroy(interactedItem, 0.05f);
                 particle.transform.position = interactedItem.transform.position;
@@ -80,7 +79,7 @@ public class EnviromentManager : MonoBehaviour
         }
     }
 
-    public void FindCollectable(string name) 
+    public void FindCollectable(string name)
     {
         var obj = enviromentItens.transform.Find("Collectables").Find(name);
         GameObject collectable = enviromentItens.transform.Find("Collectables").Find(name).gameObject;
@@ -88,7 +87,7 @@ public class EnviromentManager : MonoBehaviour
         StartCoroutine(AnimateItem(collectable));
     }
 
-    public IEnumerator AnimateItem(GameObject collectable) 
+    public IEnumerator AnimateItem(GameObject collectable)
     {
         collectable.GetComponent<SpriteRenderer>().sortingOrder = 7;
 
@@ -96,18 +95,18 @@ public class EnviromentManager : MonoBehaviour
         Vector2 vector = initialPosition;
         float seconds = 0.03f;
         float movement = 0.25f;
-        do 
-        { 
-            collectable.transform.position = vector; 
-            yield return new WaitForSeconds(seconds); 
+        do
+        {
+            collectable.transform.position = vector;
+            yield return new WaitForSeconds(seconds);
             vector.y += movement;
-        }while (vector.y <= initialPosition.y + 0.5);
+        } while (vector.y <= initialPosition.y + 0.5);
 
-        do 
-        { 
-            collectable.transform.position = vector; 
-            yield return new WaitForSeconds(seconds); 
-            vector.y -= movement; 
+        do
+        {
+            collectable.transform.position = vector;
+            yield return new WaitForSeconds(seconds);
+            vector.y -= movement;
         } while (vector.y >= initialPosition.y - 0.5);
 
         do
