@@ -12,12 +12,12 @@ public class PlayerManager : MonoBehaviour
 
     public void Start()
     {
-        roomMessagesManager.SetMessage(0,3);
+        roomMessagesManager.SetMessage(0, 3);
     }
 
     public void OnInteraction()
-    {       
-        if(roomMessagesManager.coroutine != null)
+    {
+        if (roomMessagesManager.coroutine != null)
             roomMessagesManager.ShowNextMessage();
 
 
@@ -26,7 +26,7 @@ public class PlayerManager : MonoBehaviour
     }
 
     public void OnTriggerEnter2D(Collider2D colission) => interactedItem = colission.gameObject;
-    
 
-    public void OnTriggerExit2D(Collider2D collision) =>  interactedItem = null;
+
+    public void OnTriggerExit2D(Collider2D collision) => interactedItem = null;
 }
