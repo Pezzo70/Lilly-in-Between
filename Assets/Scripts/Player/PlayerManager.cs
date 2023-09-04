@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -39,6 +40,13 @@ public class PlayerManager : MonoBehaviour
                 _spriteRenderer.sortingOrder = 5;
             else if (this.transform.position.y < collision.gameObject.transform.position.y)
                 _spriteRenderer.sortingOrder = 7;
+        }
+
+        if (collision.gameObject.tag == "MonsterPhase2")
+        {
+            collision.GetComponent<MonsterMovement>().SetPositionToRandomPoint();
+            ScenesSingleton.instance.HeartCount--;
+            GameObject.Find("HeartCountText").GetComponent<TextMeshProUGUI>().text = $"x {ScenesSingleton.instance.HeartCount}";
         }
 
     }

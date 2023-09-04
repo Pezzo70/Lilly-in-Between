@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ScenesSingleton : MonoBehaviour
 {
     public static ScenesSingleton instance = null;
-
+    public int HeartCount { get; set; }
     public int ItemsCollected { get; set; } = 0;
 
     void Awake()
