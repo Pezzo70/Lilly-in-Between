@@ -1,4 +1,4 @@
-using System;
+
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +16,9 @@ public class EnviromentManager : MonoBehaviour
 
     public ParticleSystem particle;
     public GameObject collectiblesUI;
+
+    public AudioSource audioSource;
+    public AudioClip[] audioClip;
 
     public bool bearAlreadyInteracted = false;
 
@@ -93,6 +96,7 @@ public class EnviromentManager : MonoBehaviour
             case "Ball":
             case "SparkKey":
                 Destroy(interactedItem, 0.05f);
+                audioSource.PlayOneShot(audioClip[Random.Range(0,1)]);
                 particle.transform.position = interactedItem.transform.position;
                 particle.Play();
                 ScenesSingleton.instance.ItemsCollected++;
