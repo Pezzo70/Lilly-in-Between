@@ -9,10 +9,9 @@ public class EnviromentManager : MonoBehaviour
 {
     public GameObject enviromentItens;
     public RoomMessagesManager roomMessagesManager;
+
     public ParticleSystem particle;
     public GameObject collectiblesUI;
-
-    private bool test = false;
 
     public void Start()
     {
@@ -34,11 +33,11 @@ public class EnviromentManager : MonoBehaviour
                     foreach(var child in this.collectiblesUI.GetComponentsInChildren<Transform>())
                         child.gameObject.SetActive(true);
 
+                    roomMessagesManager.EnableAndStartTimer(true);
                     break;
                 }
             case "Wardrobe":
                 {
-                    test = true;
                     interactedItem.GetComponent<BoxCollider2D>().enabled = false;
                     roomMessagesManager.SetMessage(4, 5, () => FindCollectable("Diary"));
                     break;

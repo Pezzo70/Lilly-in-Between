@@ -5,14 +5,13 @@ using UnityEngine;
 
 public class RoomMessagesManager : MonoBehaviour
 {
-
-    [SerializeField]
     public int MessageIndex { get; set; } = 0;
     public string Message { get => messages.MessagesText[MessageIndex]; }
 
 
     public Messages messages;
     public GameObject uiText;
+    public TimerManager timer;
 
     public TextMeshProUGUI TextMesh => uiText.GetComponentInChildren<TextMeshProUGUI>();
     public Coroutine coroutine;
@@ -39,6 +38,8 @@ public class RoomMessagesManager : MonoBehaviour
     {
         this.MessageIndex = messageIndex;
         uiText.SetActive(true);
+        if(timer != null)
+            timer.StopTimer();
 
         while (MessageIndex <= messages.MessagesText.Length - 1 && !Message.Equals("-"))
         {
@@ -59,7 +60,8 @@ public class RoomMessagesManager : MonoBehaviour
 
         if (coroutine != null)
             StopCoroutine(coroutine);
-
+        if(timer != null)
+            timer.StartTimer();
         coroutine = null;
         MessageIndex = 0;
     }
@@ -70,6 +72,12 @@ public class RoomMessagesManager : MonoBehaviour
             SetMessage(++this.MessageIndex, messageTimer, messageCallback);
         else
             StopMessages();
+    }
+
+    public void EnableAndStartTimer(bool enable)
+    {
+        timer.Enabled = enable;
+        if (enable) timer.StartTimer();
     }
 }
 
