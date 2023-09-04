@@ -39,4 +39,16 @@ public class ScenesTransition : MonoBehaviour
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void NewFadeInFadeOut()
+    {
+        StartCoroutine(FadeInFadeOut());
+    }
+
+    public IEnumerator FadeInFadeOut()
+    {
+        anim.Play("FadeOut");
+        yield return new WaitForSeconds(2f);
+        anim.Play("FadeIn");
+    }
 }

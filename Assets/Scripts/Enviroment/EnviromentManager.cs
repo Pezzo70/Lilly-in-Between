@@ -9,6 +9,7 @@ public class EnviromentManager : MonoBehaviour
 {
     public GameObject enviromentItens;
     public RoomMessagesManager roomMessagesManager;
+    public ScenesTransition scenesTransition;
 
     public ParticleSystem particle;
     public GameObject collectiblesUI;
@@ -44,7 +45,8 @@ public class EnviromentManager : MonoBehaviour
                     foreach (var child in this.collectiblesUI.GetComponentsInChildren<Transform>())
                         child.gameObject.SetActive(true);
 
-                    roomMessagesManager.EnableAndStartTimer(true);
+                    scenesTransition.NewFadeInFadeOut();
+                    StartCoroutine(StartCounting());
                     break;
                 }
             case "Wardrobe":
@@ -151,5 +153,11 @@ public class EnviromentManager : MonoBehaviour
 
         collectable.GetComponent<SpriteRenderer>().sortingOrder = 5;
         collectable.GetComponent<Collider2D>().enabled = true;
+    }
+
+    private IEnumerator StartCounting()
+    {
+        yield return new WaitForSeconds(3f);
+        roomMessagesManager.EnableAndStartTimer(true);
     }
 }

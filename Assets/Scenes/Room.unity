@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf1bae14f2bfe846a9d31c11a800fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phaseTime: 120
+  phaseTime: 35
   currentTime: 0
   isTimerActive: 0
 --- !u!114 &152689780
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 20 seg
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 62371f629b8d63c469916286202597d6, type: 2}
   m_sharedMaterial: {fileID: 8142187269441881844, guid: 62371f629b8d63c469916286202597d6, type: 2}
@@ -10334,6 +10334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enviromentItens: {fileID: 1763213520}
   roomMessagesManager: {fileID: 1550178600}
+  scenesTransition: {fileID: 1919462340}
   particle: {fileID: 911652948}
   collectiblesUI: {fileID: 905125956}
 --- !u!1 &1561793855

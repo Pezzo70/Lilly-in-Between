@@ -29,19 +29,25 @@ public class TimerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (this.isActiveAndEnabled && isTimerActive) 
-        { 
+        if (this.isActiveAndEnabled && isTimerActive)
+        {
             currentTime -= Time.deltaTime;
-            textMesh.text = Math.Round(currentTime).ToString();
+            textMesh.text = Math.Round(currentTime).ToString() + " seg";
+        }
+
+        if (currentTime <= 0)
+        {
+            currentTime = 0;
+            EventManager.ChangeScene.Invoke();
         }
     }
 
     public void StartTimer() => isTimerActive = true;
-    
+
 
     public void StopTimer() => isTimerActive = false;
-    
+
 
     public void ResetTimer() => currentTime = phaseTime;
-    
+
 }
