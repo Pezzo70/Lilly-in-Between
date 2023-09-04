@@ -17,7 +17,7 @@ public class EnviromentManager : MonoBehaviour
     public ParticleSystem particle;
     public GameObject collectiblesUI;
 
-    private bool bearAlreadyInteracted = false;
+    public bool bearAlreadyInteracted = false;
 
     private HeartsManager _heartsManager;
 

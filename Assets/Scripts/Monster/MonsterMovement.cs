@@ -10,6 +10,7 @@ public class MonsterMovement : MonoBehaviour
     public float speed;
     public GameObject TextPanel;
     private GameObject _player;
+    public EnviromentManager env;
 
     void Awake()
     {
@@ -23,7 +24,7 @@ public class MonsterMovement : MonoBehaviour
 
     void Update()
     {
-        if (TextPanel.activeInHierarchy) return;
+        if (TextPanel.activeInHierarchy || !env.bearAlreadyInteracted) return;
         transform.position = Vector2.MoveTowards(this.transform.position, _player.transform.position, speed * Time.deltaTime);
     }
 
