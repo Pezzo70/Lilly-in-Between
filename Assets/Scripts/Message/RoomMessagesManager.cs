@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -21,25 +22,26 @@ public class RoomMessagesManager : MonoBehaviour
         uiText.SetActive(false);
     }
 
-    public void SetMessage(int messageIndex, int timer = 5)
+    public void SetMessage(int messageIndex, int timer = 5, Action func = null)
     {
         if (coroutine != null)
             StopMessages();
 
-        coroutine = StartCoroutine(MessageCoroutine(messageIndex, timer));
+        coroutine = StartCoroutine(MessageCoroutine(messageIndex, timer, func));
     }
 
-    private IEnumerator MessageCoroutine(int messageIndex, int timer = 6)
+    private IEnumerator MessageCoroutine(int messageIndex, int timer = 6, Action func = null)
     {
         this.MessageIndex = messageIndex;
         uiText.SetActive(true);
 
-        while (!Message.Equals("-"))
+        while (MessageIndex <= messages.MessagesText.Length - 1 && !Message.Equals("-"))
         {
             TextMesh.text = Message;
             yield return new WaitForSeconds(timer);
             this.MessageIndex++;
         }
+        func?.Invoke();
 
         this.StopMessages();
     }

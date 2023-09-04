@@ -12,6 +12,7 @@ public class EnvironmentInteractable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+
         if (_uiElement != null)
             _uiElement.SetActive(true);
     }
