@@ -18,20 +18,50 @@ public class EnviromentManager : MonoBehaviour
         switch (interactedItem.name)
         {
             case "Bed":
-                {
-                    interactedItem.gameObject.GetComponent<BoxCollider2D>().enabled = false;
-                    string[] dreamItens = new string[] { "Wardrobe", "Chest", "Desk", "Plant", "Books", "Toys" };
-                    foreach (var item in dreamItens)
-                        enviromentItens.transform.Find(item).gameObject.SetActive(true);
+            {
+                interactedItem.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                string[] dreamItens = new string[] { "Wardrobe", "Chest", "Desk", "Plant", "Books", "Toys" };
+                foreach (var item in dreamItens)
+                    enviromentItens.transform.Find(item).gameObject.SetActive(true);
 
-                    break;
+                break;
+            }
+            case "Wardrobe": 
+                {
+                    interactedItem.GetComponent<BoxCollider2D>().enabled = false;
+                    roomMessagesManager.SetMessage(0);
+                    break; 
                 }
-            case "Wardrobe": { break; }
-            case "Chest": { break; }
-            case "Desk": { break; }
-            case "Plant": { break; }
-            case "Books": { break; }
-            case "Toys": { break; }
+            case "Chest": 
+                {
+                    interactedItem.GetComponent<BoxCollider2D>().enabled = false;
+                    roomMessagesManager.SetMessage(1);
+                    break; 
+                }
+            case "Desk": 
+                {
+                    interactedItem.GetComponent<BoxCollider2D>().enabled = false;
+                    roomMessagesManager.SetMessage(1);
+                    break; 
+                }
+            case "Plant": 
+                { 
+                    interactedItem.GetComponent<BoxCollider2D>().enabled = false;
+                    roomMessagesManager.SetMessage(1);
+                    break; 
+                }
+            case "Books": 
+                {
+                    interactedItem.GetComponent<BoxCollider2D>().enabled = false;
+                    roomMessagesManager.SetMessage(1);
+                    break; 
+                }
+            case "Toys": 
+                {
+                    interactedItem.GetComponent<BoxCollider2D>().enabled = false;
+                    roomMessagesManager.SetMessage(1);
+                    break; 
+                }
         }
     }    
 }
