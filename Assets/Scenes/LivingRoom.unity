@@ -5208,7 +5208,7 @@ Camera:
   far clip plane: 1000
   field of view: 40
   orthographic: 1
-  orthographic size: 5.625
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -12009,7 +12009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f22549bc7ca1294d88fb31cf6270101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  msgs: {fileID: 11400000, guid: 2e9faad71205efb4ca8dca3e4167b63d, type: 2}
+  messages: {fileID: 11400000, guid: 2e9faad71205efb4ca8dca3e4167b63d, type: 2}
   uiText: {fileID: 1568565202}
 --- !u!114 &1550178601
 MonoBehaviour:
@@ -12024,6 +12024,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomMessagesManager: {fileID: 1550178600}
+  enviromentManager: {fileID: 0}
+  interactedItem: {fileID: 0}
 --- !u!1 &1567366212
 GameObject:
   m_ObjectHideFlags: 0

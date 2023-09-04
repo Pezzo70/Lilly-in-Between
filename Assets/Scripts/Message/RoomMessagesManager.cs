@@ -31,12 +31,11 @@ public class RoomMessagesManager : MonoBehaviour
     private IEnumerator MessageCoroutine(int messageIndex, int timer = 6)
     {
         this.MessageIndex = messageIndex;
-        TextMesh.text = Message;
         uiText.SetActive(true);
 
         while (!Message.Equals("-"))
         {
-            SkipMessage();
+            ShowNextMessage();
             yield return new WaitForSeconds(timer);
         }
 
@@ -52,16 +51,16 @@ public class RoomMessagesManager : MonoBehaviour
         MessageIndex = 0;
     }
 
-    public void SkipMessage()
+    public void ShowNextMessage()
     {
         if (this.MessageIndex != -1)
         {
             if (this.MessageIndex < messages.MessagesText.Length - 1)
             {
-                this.MessageIndex++;
                 if (!Message.Equals("-"))
                 {
                     TextMesh.text = Message;
+                    this.MessageIndex++;
                 }
                 else
                 {
@@ -73,11 +72,5 @@ public class RoomMessagesManager : MonoBehaviour
                 StopMessages();
             }
         }
-    }
-
-
-    private void RefreshMessage()
-    { 
-        
     }
 }
