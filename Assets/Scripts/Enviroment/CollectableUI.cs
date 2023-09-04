@@ -8,13 +8,13 @@ public class CollectableUI : MonoBehaviour
 {
     public GameObject collectable;
 
-    private Sprite collectableSprite;    
+    private Sprite collectableSprite;
     private bool hasCollected;
 
     // Start is called before the first frame update
     void Start()
-    { 
-        collectableSprite = collectable.GetComponent<SpriteRenderer>().sprite.CloneViaSerialization();
+    {
+        collectableSprite = collectable.GetComponent<SpriteRenderer>().sprite;
     }
 
     private void Update()
