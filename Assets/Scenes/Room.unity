@@ -215,6 +215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 0
   _uiElement: {fileID: 572832409}
+  roomMessagesManager: {fileID: 0}
 --- !u!224 &152689778 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3798581048960259496, guid: 0bbf2c56cf870934a82a131e468c772b, type: 3}
@@ -323,6 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 0
   _uiElement: {fileID: 572832409}
+  roomMessagesManager: {fileID: 0}
 --- !u!1 &206742128
 GameObject:
   m_ObjectHideFlags: 0
@@ -2995,6 +2997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 0
   _uiElement: {fileID: 572832409}
+  roomMessagesManager: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3103,7 +3106,7 @@ Camera:
   far clip plane: 1000
   field of view: 40
   orthographic: 1
-  orthographic size: 5.625
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3745,6 +3748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 0
   _uiElement: {fileID: 572832409}
+  roomMessagesManager: {fileID: 0}
 --- !u!1 &783090732
 GameObject:
   m_ObjectHideFlags: 0
@@ -3837,6 +3841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 1
   _uiElement: {fileID: 572832409}
+  roomMessagesManager: {fileID: 0}
 --- !u!1 &819918214
 GameObject:
   m_ObjectHideFlags: 0
@@ -3929,6 +3934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 0
   _uiElement: {fileID: 572832409}
+  roomMessagesManager: {fileID: 0}
 --- !u!1 &905125956
 GameObject:
   m_ObjectHideFlags: 0
@@ -5357,6 +5363,7 @@ GameObject:
   - component: {fileID: 1550178600}
   - component: {fileID: 1550178601}
   - component: {fileID: 1550178602}
+  - component: {fileID: 1550178603}
   m_Layer: 0
   m_Name: Lilly
   m_TagString: Untagged
@@ -5597,6 +5604,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomMessagesManager: {fileID: 1550178600}
   enviromentManager: {fileID: 1550178602}
+  audioClips: []
+  audioSource: {fileID: 0}
   heartAvailable: {fileID: 0}
   interactedItem: {fileID: 0}
 --- !u!114 &1550178602
@@ -5618,7 +5627,107 @@ MonoBehaviour:
   desiredProfile: {fileID: 11400000, guid: 75fcebc341d63c3448797aa4e9ac7fd2, type: 2}
   particle: {fileID: 911652948}
   collectiblesUI: {fileID: 905125956}
+  audioSource: {fileID: 1550178603}
+  audioClip:
+  - {fileID: 8300000, guid: 91db761ccd73ab04487157b87600141e, type: 3}
+  - {fileID: 8300000, guid: 39127d80ea0e08f4b82fe14861f2827a, type: 3}
   bearAlreadyInteracted: 0
+--- !u!82 &1550178603
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550178592}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1561793855
 GameObject:
   m_ObjectHideFlags: 0
@@ -5711,6 +5820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsOneTimeInteractable: 0
   _uiElement: {fileID: 572832409}
+  roomMessagesManager: {fileID: 0}
 --- !u!1 &1567366212
 GameObject:
   m_ObjectHideFlags: 0
