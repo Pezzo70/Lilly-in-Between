@@ -24,7 +24,10 @@ public class RoomMessagesManager : MonoBehaviour
     public void SetMessage(int messageIndex, int timer = 5)
     {
         if (coroutine != null)
+        {
             StopMessages();
+        }
+
         coroutine = StartCoroutine(MessageCoroutine(messageIndex, timer));
     }
 
@@ -77,7 +80,7 @@ public class RoomMessagesManager : MonoBehaviour
 
 
     private void RefreshMessage()
-    { 
-        
+    {
+
     }
 }

@@ -27,7 +27,7 @@ MonoBehaviour:
     m_Value: 0.4
   rounded:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
 --- !u!114 &-5544366594551268501
 MonoBehaviour:
   m_ObjectHideFlags: 3

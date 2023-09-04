@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ebcb89e744f83c41beb7b2f1824d5ee, type: 3}
   m_Name: LivingRoomMessages
   m_EditorClassIdentifier: 
-  currentText: 0
   MessagesText:
   - Nossa... a sala... meio... hmm... diferente!
+  - '-'
