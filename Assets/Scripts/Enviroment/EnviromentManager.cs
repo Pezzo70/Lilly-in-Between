@@ -12,6 +12,13 @@ public class EnviromentManager : MonoBehaviour
 
     private bool bearAlreadyInteracted = false;
 
+    private HeartsManager _heartsManager;
+
+    public void Awake()
+    {
+        GameObject.FindGameObjectWithTag("HeartsManager").TryGetComponent<HeartsManager>(out _heartsManager);
+    }
+
     public void Start()
     {
 
@@ -78,8 +85,13 @@ public class EnviromentManager : MonoBehaviour
                 {
                     if (bearAlreadyInteracted == false)
                     {
-                        roomMessagesManager.SetMessage(6);
+                        roomMessagesManager.SetMessage(6, 5, () =>
+                        {
+                            if (_heartsManager != null)
+                                _heartsManager.startSpawn = true;
+                        });
                         bearAlreadyInteracted = true;
+
                     }
                     break;
                 }
