@@ -26,7 +26,6 @@ public class RoomMessagesManager : MonoBehaviour
     {
         if (coroutine != null)
             StopMessages();
-
         coroutine = StartCoroutine(MessageCoroutine(messageIndex, timer, func));
     }
 
@@ -62,6 +61,8 @@ public class RoomMessagesManager : MonoBehaviour
         if (this.MessageIndex != -1 && this.MessageIndex < messages.MessagesText.Length - 1 && !Message.Equals("-"))
             SetMessage(++this.MessageIndex);
         else
-            StopMessages();               
+            StopMessages();
     }
 }
+
+
