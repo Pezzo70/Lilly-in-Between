@@ -90,6 +90,7 @@ public class EnviromentManager : MonoBehaviour
                 Destroy(interactedItem, 0.05f);
                 particle.transform.position = interactedItem.transform.position;
                 particle.Play();
+                ScenesSingleton.instance.ItemsCollected++;
                 break;
             case "Bear":
                 {
