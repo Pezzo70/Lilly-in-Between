@@ -23,7 +23,7 @@ public class HeartsManager : MonoBehaviour
         {
             if (coroutine == null)
             {
-                coroutine = StartCoroutine(SpawnHeart());
+                coroutine = StartCoroutine(SpawnHeart(_tStack.Pop()));
             }
         }
         else
@@ -32,9 +32,9 @@ public class HeartsManager : MonoBehaviour
         }
     }
 
-    private IEnumerator SpawnHeart()
+    private IEnumerator SpawnHeart(Transform t)
     {
-        Instantiate(heartPrefab, _tStack.Pop(), true);
+        Instantiate(heartPrefab, t.transform.position, Quaternion.identity);
         yield return new WaitForSeconds(3f);
         coroutine = null;
     }
