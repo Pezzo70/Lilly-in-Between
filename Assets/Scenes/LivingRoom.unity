@@ -323,6 +323,10 @@ PrefabInstance:
       propertyPath: messages
       value: 
       objectReference: {fileID: 11400000, guid: 2e9faad71205efb4ca8dca3e4167b63d, type: 2}
+    - target: {fileID: 1425759056202385244, guid: b67cc45d244ba3f4bbaa64d5f2cff90c, type: 3}
+      propertyPath: enviromentManager
+      value: 
+      objectReference: {fileID: 241136194}
     - target: {fileID: 8456162622895540984, guid: b67cc45d244ba3f4bbaa64d5f2cff90c, type: 3}
       propertyPath: m_Name
       value: Lilly
@@ -384,6 +388,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b67cc45d244ba3f4bbaa64d5f2cff90c, type: 3}
+--- !u!114 &241136194 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2368185515281297701, guid: b67cc45d244ba3f4bbaa64d5f2cff90c, type: 3}
+  m_PrefabInstance: {fileID: 241136193}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41a9fd87282c76e45b5bf047e1c9b8a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &266341745
 GameObject:
   m_ObjectHideFlags: 3
@@ -13468,6 +13483,7 @@ MonoBehaviour:
   - {fileID: 1640376011}
   speed: 3.25
   TextPanel: {fileID: 1568565202}
+  env: {fileID: 241136194}
 --- !u!61 &1812576896
 BoxCollider2D:
   m_ObjectHideFlags: 0

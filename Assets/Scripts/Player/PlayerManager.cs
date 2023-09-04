@@ -47,7 +47,8 @@ public class PlayerManager : MonoBehaviour
         if (collision.gameObject.tag == "MonsterPhase2")
         {
             collision.GetComponent<MonsterMovement>().SetPositionToRandomPoint();
-            ScenesSingleton.instance.HeartCount--;
+            if (ScenesSingleton.instance.HeartCount > 0)
+                ScenesSingleton.instance.HeartCount--;
             GameObject.Find("HeartCountText").GetComponent<TextMeshProUGUI>().text = $"x {ScenesSingleton.instance.HeartCount}";
         }
 
