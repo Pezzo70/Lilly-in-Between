@@ -25,6 +25,7 @@ public class RoomMessagesManager : MonoBehaviour
     {
         if (coroutine != null)
             StopMessages();
+
         coroutine = StartCoroutine(MessageCoroutine(messageIndex, timer));
     }
 
@@ -35,8 +36,9 @@ public class RoomMessagesManager : MonoBehaviour
 
         while (!Message.Equals("-"))
         {
-            ShowNextMessage();
+            TextMesh.text = Message;
             yield return new WaitForSeconds(timer);
+            this.MessageIndex++;
         }
 
         this.StopMessages();
@@ -53,24 +55,10 @@ public class RoomMessagesManager : MonoBehaviour
 
     public void ShowNextMessage()
     {
-        if (this.MessageIndex != -1)
-        {
-            if (this.MessageIndex < messages.MessagesText.Length - 1)
-            {
-                if (!Message.Equals("-"))
-                {
-                    TextMesh.text = Message;
-                    this.MessageIndex++;
-                }
-                else
-                {
-                    StopMessages();
-                }
-            }
-            else
-            {
-                StopMessages();
-            }
-        }
+        Debug.Log(this.MessageIndex);
+        if (this.MessageIndex != -1 && this.MessageIndex < messages.MessagesText.Length - 1 && !Message.Equals("-"))
+            SetMessage(++this.MessageIndex);
+        else
+            StopMessages();               
     }
 }
