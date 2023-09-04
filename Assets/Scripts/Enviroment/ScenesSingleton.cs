@@ -26,6 +26,14 @@ public class ScenesSingleton : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
+            HeartCount = 0;
+            ItemsCollected = 0;
+            Health = 3;
+        }
+
+
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
             if (ItemsCollected == 4)
             {
                 EventManager.ChangeScene.Invoke(-1);
