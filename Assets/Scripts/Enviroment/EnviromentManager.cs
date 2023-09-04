@@ -116,6 +116,7 @@ public class EnviromentManager : MonoBehaviour
                         {
                             particle.transform.position = interactedItem.transform.position;
                             particle.Play(true);
+                            bear.MonsterToRandom();
                             StartCoroutine(bear.WaitToHugBear());
                         }
                     }
