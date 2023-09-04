@@ -26,61 +26,40 @@ public class RoomMessagesManager : MonoBehaviour
         if (coroutine != null)
         {
             StopMessages();
+
+            coroutine = StartCoroutine(MessageCoroutine(messageIndex, timer));
         }
 
-        coroutine = StartCoroutine(MessageCoroutine(messageIndex, timer));
-    }
-
-    private IEnumerator MessageCoroutine(int messageIndex, int timer = 6)
-    {
-        this.MessageIndex = messageIndex;
-        TextMesh.text = Message;
-        uiText.SetActive(true);
-
-        while (!Message.Equals("-"))
+        private IEnumerator MessageCoroutine(int messageIndex, int timer = 6)
         {
-            SkipMessage();
-            yield return new WaitForSeconds(timer);
-        }
+            this.MessageIndex = messageIndex;
+            uiText.SetActive(true);
 
-        this.StopMessages();
-    }
-
-    public void StopMessages()
-    {
-        uiText.SetActive(false);
-        StopCoroutine(coroutine);
-
-        coroutine = null;
-        MessageIndex = 0;
-    }
-
-    public void SkipMessage()
-    {
-        if (this.MessageIndex != -1)
-        {
-            if (this.MessageIndex < messages.MessagesText.Length - 1)
+            while (!Message.Equals("-"))
             {
+                TextMesh.text = Message;
+                yield return new WaitForSeconds(timer);
                 this.MessageIndex++;
-                if (!Message.Equals("-"))
-                {
-                    TextMesh.text = Message;
-                }
-                else
-                {
-                    StopMessages();
-                }
             }
+
+            this.StopMessages();
+        }
+
+        public void StopMessages()
+        {
+            uiText.SetActive(false);
+            StopCoroutine(coroutine);
+
+            coroutine = null;
+            MessageIndex = 0;
+        }
+
+        public void ShowNextMessage()
+        {
+            Debug.Log(this.MessageIndex);
+            if (this.MessageIndex != -1 && this.MessageIndex < messages.MessagesText.Length - 1 && !Message.Equals("-"))
+                SetMessage(++this.MessageIndex);
             else
-            {
                 StopMessages();
-            }
         }
     }
-
-
-    private void RefreshMessage()
-    {
-
-    }
-}

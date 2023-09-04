@@ -18,7 +18,7 @@ public class PlayerManager : MonoBehaviour
     public void OnInteraction()
     {       
         if(roomMessagesManager.coroutine != null)
-            roomMessagesManager.SkipMessage();
+            roomMessagesManager.ShowNextMessage();
 
 
         if (interactedItem != null)
