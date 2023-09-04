@@ -45,7 +45,7 @@ public class Heart : MonoBehaviour
 
     private IEnumerator Disable()
     {
-        yield return new WaitForSeconds(7f);
+        yield return new WaitForSeconds(10f);
         DestroyImmediate(this.gameObject);
     }
 }

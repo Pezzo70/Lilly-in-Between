@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Finale
   m_EditorClassIdentifier: 
   MessagesText:
-  - '* LILLY ACORDA *'
+  - '* LILLY ACORDA *  [FINAL RUIM]'
   - "Mam\xE3e: Lilly... desculpa, mas tenho que te contar que..."
   - "Mam\xE3e: seu pai e eu, n\xE3o iremos mais ficar juntos..."
   - "Mam\xE3e: voc\xEA vai entender quando crescer..."
   - "Mam\xE3e: n\xE3o posso contar ainda, o que aconteceu com o Luan mas..."
   - "Mam\xE3e: saiba que a culpa \xE9 de seu pai."
   - '-'
-  - '* LILLY ACORDA *'
+  - '* LILLY ACORDA * [FINAL NEUTRO]'
   - "Mam\xE3e: Lilly... acorda... preciso falar com voc\xEA..."
   - "Mam\xE3e: desculpa pela discuss\xE3o mais cedo, seu pai e eu..."
   - "Mam\xE3e: sentimos muito a falta do Luan e, infelizmente, seu pai se culpa por
@@ -29,7 +29,7 @@ MonoBehaviour:
   - 'Papai: minha filha... desculpa...'
   - "Lilly: o que voc\xEA fez com meu irm\xE3o?"
   - '-'
-  - '* LILLY ACORDA *'
+  - '* LILLY ACORDA * [FINAL BOM]'
   - "* MAM\xC3E E PAPAI ENTRAM NO QUARTO *"
   - 'Papai: Filha... precisamos falar sobre o Luan...'
   - "Mam\xE3e: seu Pai sente muito pelo o que aconteceu com o seu irm\xE3o..."
