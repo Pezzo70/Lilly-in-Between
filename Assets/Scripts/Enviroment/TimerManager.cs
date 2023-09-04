@@ -39,7 +39,7 @@ public class TimerManager : MonoBehaviour
         if (currentTime <= 0)
         {
             currentTime = 0;
-            EventManager.ChangeScene.Invoke();
+            EventManager.ChangeScene.Invoke(null);
         }
 
         int time = (int)Math.Round(currentTime);

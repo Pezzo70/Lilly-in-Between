@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RoomMessagesManager : MonoBehaviour
 {
@@ -38,7 +39,7 @@ public class RoomMessagesManager : MonoBehaviour
     {
         this.MessageIndex = messageIndex;
         uiText.SetActive(true);
-        if(timer != null)
+        if (timer != null)
             timer.StopTimer();
 
         while (MessageIndex <= messages.MessagesText.Length - 1 && !Message.Equals("-"))
@@ -48,10 +49,14 @@ public class RoomMessagesManager : MonoBehaviour
             this.MessageIndex++;
         }
 
-        if(messageCallback != null)
+        if (messageCallback != null)
             messageCallback.Invoke();
 
         this.StopMessages();
+        if (SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            EventManager.ChangeScene(0);
+        }
     }
 
     public void StopMessages()
@@ -60,7 +65,7 @@ public class RoomMessagesManager : MonoBehaviour
 
         if (coroutine != null)
             StopCoroutine(coroutine);
-        if(timer != null)
+        if (timer != null)
             timer.StartTimer();
         coroutine = null;
         MessageIndex = 0;

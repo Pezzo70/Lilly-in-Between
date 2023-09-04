@@ -21,9 +21,28 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 3)
+        if (SceneManager.GetActiveScene().buildIndex == 4)
         {
-            Debug.Log("Teste");
+            if (
+                ScenesSingleton.instance.ItemsCollected == 4
+                && ScenesSingleton.instance.HeartCount >= 8
+                && ScenesSingleton.instance.Health == 3
+            )
+            {
+                roomMessagesManager.SetMessage(15, 3);
+            }
+            else if (ScenesSingleton.instance.ItemsCollected >= 2
+                && ScenesSingleton.instance.HeartCount >= 6
+                && ScenesSingleton.instance.Health >= 2
+            )
+            {
+                roomMessagesManager.SetMessage(7, 3);
+            }
+            else
+            {
+
+                roomMessagesManager.SetMessage(0, 3);
+            }
         }
         else
         {

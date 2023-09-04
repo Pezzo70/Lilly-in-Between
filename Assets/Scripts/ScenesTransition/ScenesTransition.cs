@@ -28,16 +28,17 @@ public class ScenesTransition : MonoBehaviour
         EventManager.ChangeScene -= LoadNewScene;
     }
 
-    public void LoadNewScene()
+    public void LoadNewScene(int? i)
     {
-        StartCoroutine(LoadScene());
+        StartCoroutine(LoadScene(i));
     }
 
-    public IEnumerator LoadScene()
+    public IEnumerator LoadScene(int? i)
     {
         anim.Play("FadeOut");
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        i = i != null ? i : SceneManager.GetActiveScene().buildIndex + 1;
+        SceneManager.LoadScene((int)i);
     }
 
     public void NewFadeInFadeOut()

@@ -28,7 +28,7 @@ public class ScenesSingleton : MonoBehaviour
         {
             if (ItemsCollected == 4)
             {
-                EventManager.ChangeScene.Invoke();
+                EventManager.ChangeScene.Invoke(null);
             }
         }
     }
