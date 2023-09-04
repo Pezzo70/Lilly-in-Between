@@ -13,5 +13,12 @@ MonoBehaviour:
   m_Name: LivingRoomMessages
   m_EditorClassIdentifier: 
   MessagesText:
-  - Nossa... a sala... meio... hmm... diferente!
+  - "Eita, o que aconteceu aqui? A sala est\xE1 diferente..."
+  - "Est\xE1 t\xE3o grande e cheia de coisas!"
+  - "A mam\xE3e nunca deixa a sala desorganizada..."
+  - "Ser\xE1 que o papai derramou a babida dele de novo?"
+  - Estou com medo, preciso achar meu ursinho...
+  - '-'
+  - "Me sinto muito mais segura com o Pimp\xE3o..."
+  - "Ele me protege... mas ainda sinto saudades do carinho da mam\xE3e e do papai."
   - '-'

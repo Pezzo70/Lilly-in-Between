@@ -8,6 +8,7 @@ TagManager:
   - UIText
   - Bed
   - Man
+  - HeartsManager
   layers:
   - Default
   - TransparentFX
