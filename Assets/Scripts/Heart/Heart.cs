@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Heart : MonoBehaviour
@@ -24,7 +25,8 @@ public class Heart : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            //Count heart collected
+            ScenesSingleton.instance.HeartCount++;
+            GameObject.Find("HeartCountText").GetComponent<TextMeshProUGUI>().text = $"x {ScenesSingleton.instance.HeartCount}";
             StopAllCoroutines();
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }

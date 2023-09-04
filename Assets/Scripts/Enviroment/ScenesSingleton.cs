@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ScenesSingleton : MonoBehaviour
 {
-    private static ScenesSingleton instance = null;
+    public static ScenesSingleton instance = null;
+    public int HeartCount { get; set; }
 
     void Awake()
     {
