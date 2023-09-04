@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: RoomMessages
   m_EditorClassIdentifier: 
   MessagesText:
-  - Estou escutando gritos vindo da sala... acho que o papai e a mami voltaram a
-    brigar...
+  - "Estou escutando gritos vindo da sala... acho que o papai e a mam\xE3e voltaram
+    a brigar..."
   - '* NUNCA MAIS QUERO TE VER! *'
-  - "Acho que mami gritou com o papai... \xE9 melhor eu ir para a cama..."
+  - "Acho que mam\xE3e gritou com o papai... \xE9 melhor eu ir para a cama..."
   - '-'
-  - 'Mami guarda as roupas aqui... antes ela guardava a minha e a do Luan... '
+  - "Mam\xE3e guarda as roupas aqui... antes ela guardava a minha e a do Luan... "
   - "Agora s\xF3 vejo minhas roupas... por que eles sa\xEDram aquele dia? * ENCONTROU
     O DI\xC1RIO DE LILLY  *"
   - '-'

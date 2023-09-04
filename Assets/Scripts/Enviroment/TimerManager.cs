@@ -18,13 +18,13 @@ public class TimerManager : MonoBehaviour
 
     private TextMeshProUGUI textMesh;
 
-    // Start is called before the first frame update
+    public Death death;
+
     void Start()
     {
         currentTime = phaseTime;
         timer = this.transform.parent.gameObject;
         textMesh = GetComponent<TextMeshProUGUI>();
-        Debug.Log(textMesh);
     }
 
     // Update is called once per frame
@@ -33,7 +33,6 @@ public class TimerManager : MonoBehaviour
         if (this.isActiveAndEnabled && isTimerActive)
         {
             currentTime -= Time.deltaTime;
-            Debug.Log(textMesh == null);
             textMesh.text = Math.Round(currentTime).ToString() + " seg";
         }
 
@@ -41,6 +40,13 @@ public class TimerManager : MonoBehaviour
         {
             currentTime = 0;
             EventManager.ChangeScene.Invoke();
+        }
+
+        int time = (int)Math.Round(currentTime);
+
+        if (time == 90 || time == 45 || time == 20)
+        {
+            death.Trigger();
         }
     }
 

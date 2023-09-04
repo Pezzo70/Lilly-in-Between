@@ -16,13 +16,14 @@ public class HeartAvailable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void RemoveHeart() 
+    public void RemoveHeart()
     {
         var heart = this.gameObject.transform.Find("Heart" + heartCount);
         heart.GetComponent<Image>().sprite = heartNotAvailable;
         heartCount--;
+        ScenesSingleton.instance.Health = heartCount;
     }
 }
