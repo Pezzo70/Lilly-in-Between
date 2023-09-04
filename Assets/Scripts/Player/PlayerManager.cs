@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -20,7 +21,14 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
-        roomMessagesManager.SetMessage(0, 3);
+        if (SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            Debug.Log("Teste");
+        }
+        else
+        {
+            roomMessagesManager.SetMessage(0, 3);
+        }
     }
 
     public void OnInteraction()
