@@ -96,7 +96,7 @@ public class EnviromentManager : MonoBehaviour
             case "Ball":
             case "SparkKey":
                 Destroy(interactedItem, 0.05f);
-                audioSource.PlayOneShot(audioClip[Random.Range(0,1)]);
+                audioSource.PlayOneShot(audioClip[Random.Range(0, 1)]);
                 particle.transform.position = interactedItem.transform.position;
                 particle.Play();
                 ScenesSingleton.instance.ItemsCollected++;
@@ -139,7 +139,7 @@ public class EnviromentManager : MonoBehaviour
 
     public void Update()
     {
-        if(bearAlreadyInteracted && bearLastUseSecond <= 5)
+        if (bearAlreadyInteracted && bearLastUseSecond <= 5)
             bearLastUseSecond += Time.deltaTime;
     }
     public IEnumerator AnimateItem(GameObject collectable)
@@ -180,6 +180,7 @@ public class EnviromentManager : MonoBehaviour
 
     private IEnumerator StartCounting()
     {
+        AudioSingleton.instance.audioSource.Play();
         yield return new WaitForSeconds(2.7f);
         volume.profile = desiredProfile;
         for (int i = 0; i < this.collectiblesUI.transform.childCount; i++)

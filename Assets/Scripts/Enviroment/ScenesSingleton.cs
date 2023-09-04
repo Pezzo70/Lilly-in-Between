@@ -32,6 +32,15 @@ public class ScenesSingleton : MonoBehaviour
         }
 
 
+        if (SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            if (Health == 0)
+            {
+                EventManager.ChangeScene.Invoke(-1);
+            }
+        }
+
+
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             if (ItemsCollected == 4)
