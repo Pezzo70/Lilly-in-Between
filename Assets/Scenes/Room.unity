@@ -2497,7 +2497,7 @@ Camera:
   far clip plane: 1000
   field of view: 40
   orthographic: 1
-  orthographic size: 5.625
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2810,6 +2810,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -4, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 6
+      m_TileSpriteIndex: 2
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 2, y: 0, z: 0}
     second:
       serializedVersion: 2
@@ -2874,8 +2884,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 581bf8b0aa49a9042adb53c6316e449c, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 13a738ed3bb82db4da499c5994487e50, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: ab41571b8dabe7d40974974ae77c1e1f, type: 2}
   - m_RefCount: 1
@@ -2885,8 +2895,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -1621220277, guid: b3e14a40df1d3e7478e0e9118597b8d9, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: 6313e7774b7efb74285aab10a9b97e6b, type: 3}
   - m_RefCount: 1
@@ -2900,7 +2910,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -1137126943, guid: b3e14a40df1d3e7478e0e9118597b8d9, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 7
+  - m_RefCount: 8
     m_Data:
       e00: 1
       e01: 0
@@ -2919,7 +2929,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 7
+  - m_RefCount: 8
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -3050,7 +3060,7 @@ GameObject:
   - component: {fileID: 783090735}
   m_Layer: 0
   m_Name: Bed
-  m_TagString: Untagged
+  m_TagString: Bed
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4299,6 +4309,7 @@ GameObject:
   - component: {fileID: 1550178599}
   - component: {fileID: 1550178600}
   - component: {fileID: 1550178601}
+  - component: {fileID: 1550178602}
   m_Layer: 0
   m_Name: Lilly
   m_TagString: Untagged
@@ -4522,7 +4533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f22549bc7ca1294d88fb31cf6270101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  msgs: {fileID: 11400000, guid: 0057533f9d992e54c8367f0441c29da1, type: 2}
+  messages: {fileID: 11400000, guid: 0057533f9d992e54c8367f0441c29da1, type: 2}
   uiText: {fileID: 1568565202}
 --- !u!114 &1550178601
 MonoBehaviour:
@@ -4536,6 +4547,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff89b83ecfb3fb43b985690dbd013d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomMessagesManager: {fileID: 1550178600}
+  enviromentManager: {fileID: 1550178602}
+  interactedItem: {fileID: 0}
+--- !u!114 &1550178602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550178592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41a9fd87282c76e45b5bf047e1c9b8a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enviromentItens: {fileID: 1763213520}
   roomMessagesManager: {fileID: 1550178600}
 --- !u!1 &1561793855
 GameObject:
@@ -5064,7 +5091,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 6
-      m_TileSpriteIndex: 5
+      m_TileSpriteIndex: 8
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5101,14 +5128,14 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 816397155, guid: b3e14a40df1d3e7478e0e9118597b8d9, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 1
     m_Data:
