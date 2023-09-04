@@ -2677,7 +2677,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &399273206
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2767,7 +2767,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &430315288
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3564,7 +3564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &683376614
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8798,7 +8798,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &950941119
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8981,7 +8981,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: dad20f81af28b0646beb1f34d4c6264a, type: 2}
+  sharedProfile: {fileID: 11400000, guid: de71f590940cfaa42b0050b636ad7459, type: 2}
 --- !u!4 &1057495279
 Transform:
   m_ObjectHideFlags: 0
@@ -10335,6 +10335,8 @@ MonoBehaviour:
   enviromentItens: {fileID: 1763213520}
   roomMessagesManager: {fileID: 1550178600}
   scenesTransition: {fileID: 1919462340}
+  volume: {fileID: 1057495278}
+  desiredProfile: {fileID: 11400000, guid: 75fcebc341d63c3448797aa4e9ac7fd2, type: 2}
   particle: {fileID: 911652948}
   collectiblesUI: {fileID: 905125956}
 --- !u!1 &1561793855

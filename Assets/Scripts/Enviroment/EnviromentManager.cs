@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class EnviromentManager : MonoBehaviour
 {
     public GameObject enviromentItens;
     public RoomMessagesManager roomMessagesManager;
     public ScenesTransition scenesTransition;
+    public Volume volume;
+    public VolumeProfile desiredProfile;
 
     public ParticleSystem particle;
     public GameObject collectiblesUI;
@@ -42,8 +45,6 @@ public class EnviromentManager : MonoBehaviour
                     foreach (var item in dreamItens)
                         enviromentItens.transform.Find(item).gameObject.SetActive(true);
 
-                    foreach (var child in this.collectiblesUI.GetComponentsInChildren<Transform>())
-                        child.gameObject.SetActive(true);
 
                     scenesTransition.NewFadeInFadeOut();
                     StartCoroutine(StartCounting());
@@ -157,7 +158,12 @@ public class EnviromentManager : MonoBehaviour
 
     private IEnumerator StartCounting()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2.7f);
+        volume.profile = desiredProfile;
+        for (int i = 0; i < this.collectiblesUI.transform.childCount; i++)
+        {
+            this.collectiblesUI.transform.GetChild(i).gameObject.SetActive(true);
+        }
         roomMessagesManager.EnableAndStartTimer(true);
     }
 }
