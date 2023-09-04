@@ -29,37 +29,40 @@ public class RoomMessagesManager : MonoBehaviour
 
             coroutine = StartCoroutine(MessageCoroutine(messageIndex, timer));
         }
-
-        private IEnumerator MessageCoroutine(int messageIndex, int timer = 6)
-        {
-            this.MessageIndex = messageIndex;
-            uiText.SetActive(true);
-
-            while (!Message.Equals("-"))
-            {
-                TextMesh.text = Message;
-                yield return new WaitForSeconds(timer);
-                this.MessageIndex++;
-            }
-
-            this.StopMessages();
-        }
-
-        public void StopMessages()
-        {
-            uiText.SetActive(false);
-            StopCoroutine(coroutine);
-
-            coroutine = null;
-            MessageIndex = 0;
-        }
-
-        public void ShowNextMessage()
-        {
-            Debug.Log(this.MessageIndex);
-            if (this.MessageIndex != -1 && this.MessageIndex < messages.MessagesText.Length - 1 && !Message.Equals("-"))
-                SetMessage(++this.MessageIndex);
-            else
-                StopMessages();
-        }
     }
+
+    private IEnumerator MessageCoroutine(int messageIndex, int timer = 6)
+    {
+        this.MessageIndex = messageIndex;
+        uiText.SetActive(true);
+
+        while (!Message.Equals("-"))
+        {
+            TextMesh.text = Message;
+            yield return new WaitForSeconds(timer);
+            this.MessageIndex++;
+        }
+
+        this.StopMessages();
+    }
+
+    public void StopMessages()
+    {
+        uiText.SetActive(false);
+        StopCoroutine(coroutine);
+
+        coroutine = null;
+        MessageIndex = 0;
+    }
+
+    public void ShowNextMessage()
+    {
+        Debug.Log(this.MessageIndex);
+        if (this.MessageIndex != -1 && this.MessageIndex < messages.MessagesText.Length - 1 && !Message.Equals("-"))
+            SetMessage(++this.MessageIndex);
+        else
+            StopMessages();
+    }
+}
+
+
