@@ -11,6 +11,7 @@ TagManager:
   - HeartsManager
   - MonsterPhase2
   - MonsterPhase3
+  - Exit
   layers:
   - Default
   - TransparentFX
