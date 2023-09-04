@@ -19,6 +19,8 @@ public class EnviromentManager : MonoBehaviour
 
     public bool bearAlreadyInteracted = false;
 
+    private float bearLastUseSecond;
+
     private HeartsManager _heartsManager;
 
     public void Awake()
@@ -97,6 +99,7 @@ public class EnviromentManager : MonoBehaviour
                 break;
             case "Bear":
                 {
+                    Bear bear = interactedItem.GetComponent<Bear>();
                     if (bearAlreadyInteracted == false)
                     {
                         roomMessagesManager.SetMessage(6, 5, () =>
@@ -106,6 +109,15 @@ public class EnviromentManager : MonoBehaviour
                             roomMessagesManager.EnableAndStartTimer(true);
                         });
                         bearAlreadyInteracted = true;
+                    }
+                    else
+                    {
+                        if (bear.canHug)
+                        {
+                            particle.transform.position = interactedItem.transform.position;
+                            particle.Play(true);
+                            StartCoroutine(bear.WaitToHugBear());
+                        }
                     }
                     break;
                 }
@@ -120,6 +132,11 @@ public class EnviromentManager : MonoBehaviour
         StartCoroutine(AnimateItem(collectable));
     }
 
+    public void Update()
+    {
+        if(bearAlreadyInteracted && bearLastUseSecond <= 5)
+            bearLastUseSecond += Time.deltaTime;
+    }
     public IEnumerator AnimateItem(GameObject collectable)
     {
         collectable.GetComponent<Collider2D>().enabled = false;

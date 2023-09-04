@@ -6,25 +6,25 @@ using UnityEngine;
 public class Bear : MonoBehaviour
 {
     public MonsterMovement monster;
-    private bool canHug = true;
+    private EnvironmentInteractable environmentInteractable;
+    public bool canHug = true;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void Start()
     {
-        if (other.gameObject.tag == "Player")
-        {
-            if (canHug)
-            {
-                canHug = false;
-                monster.SetPositionToRandomPoint();
-                StartCoroutine(WaitToHugBear());
-            }
-        }
+        environmentInteractable = GetComponent<EnvironmentInteractable>();
     }
-
 
     public IEnumerator WaitToHugBear()
     {
-        yield return new WaitForSeconds(2f);
+        canHug = false;
+        environmentInteractable.SetInteractEnabled(false);
+        yield return new WaitForSeconds(5f);
+        environmentInteractable.SetInteractEnabled(true);
         canHug = true;
+    }
+
+    public void MonsterToRandom() 
+    {
+        monster.SetPositionToRandomPoint();
     }
 }
