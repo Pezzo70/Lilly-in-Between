@@ -47,7 +47,9 @@ public class RoomMessagesManager : MonoBehaviour
     public void StopMessages()
     {
         uiText.SetActive(false);
-        StopCoroutine(coroutine);
+
+        if(coroutine != null)
+            StopCoroutine(coroutine);
 
         coroutine = null;
         MessageIndex = 0;
@@ -55,7 +57,6 @@ public class RoomMessagesManager : MonoBehaviour
 
     public void ShowNextMessage()
     {
-        Debug.Log(this.MessageIndex);
         if (this.MessageIndex != -1 && this.MessageIndex < messages.MessagesText.Length - 1 && !Message.Equals("-"))
             SetMessage(++this.MessageIndex);
         else
