@@ -81,7 +81,7 @@ public class PlayerManager : MonoBehaviour
                 ScenesSingleton.instance.HeartCount--;
             GameObject.Find("HeartCountText").GetComponent<TextMeshProUGUI>().text = $"x {ScenesSingleton.instance.HeartCount}";
 
-            audioSource.PlayOneShot(audioClips[Random.Range(0,1)]);
+            audioSource.PlayOneShot(audioClips[Random.Range(0, 1)]);
         }
 
         if (collision.gameObject.tag == "MonsterPhase3")
@@ -89,6 +89,11 @@ public class PlayerManager : MonoBehaviour
             heartAvailable.RemoveHeart();
             this.transform.position = new Vector2(14.97f, -41.97f);
             audioSource.PlayOneShot(audioClips[Random.Range(0, 1)]);
+        }
+
+        if (collision.gameObject.tag == "Exit")
+        {
+            EventManager.ChangeScene.Invoke(-1);
         }
 
     }

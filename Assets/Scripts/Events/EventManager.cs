@@ -5,6 +5,6 @@ using UnityEngine.Events;
 
 public static class EventManager
 {
-    public static UnityAction<int?> ChangeScene;
+    public static UnityAction<int> ChangeScene;
 
 }
