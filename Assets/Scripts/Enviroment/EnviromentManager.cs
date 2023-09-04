@@ -103,9 +103,9 @@ public class EnviromentManager : MonoBehaviour
                         {
                             if (_heartsManager != null)
                                 _heartsManager.startSpawn = true;
+                            roomMessagesManager.EnableAndStartTimer(true);
                         });
                         bearAlreadyInteracted = true;
-
                     }
                     break;
                 }

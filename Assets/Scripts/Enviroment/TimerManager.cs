@@ -24,6 +24,7 @@ public class TimerManager : MonoBehaviour
         currentTime = phaseTime;
         timer = this.transform.parent.gameObject;
         textMesh = GetComponent<TextMeshProUGUI>();
+        Debug.Log(textMesh);
     }
 
     // Update is called once per frame
@@ -32,6 +33,7 @@ public class TimerManager : MonoBehaviour
         if (this.isActiveAndEnabled && isTimerActive)
         {
             currentTime -= Time.deltaTime;
+            Debug.Log(textMesh == null);
             textMesh.text = Math.Round(currentTime).ToString() + " seg";
         }
 
