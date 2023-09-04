@@ -9,6 +9,7 @@ TagManager:
   - Bed
   - Man
   - HeartsManager
+  - MonsterPhase2
   layers:
   - Default
   - TransparentFX
