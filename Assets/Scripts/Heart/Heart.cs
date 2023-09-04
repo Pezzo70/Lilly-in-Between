@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Heart : MonoBehaviour
 {
+    public AudioClip[] audioClips;
+    public AudioSource audioSource;
 
     private bool _destroy = false;
 
@@ -25,6 +27,7 @@ public class Heart : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            audioSource.PlayOneShot(audioClips[Random.Range(0, 1)]);
             ScenesSingleton.instance.HeartCount++;
             GameObject.Find("HeartCountText").GetComponent<TextMeshProUGUI>().text = $"x {ScenesSingleton.instance.HeartCount}";
             StopAllCoroutines();
