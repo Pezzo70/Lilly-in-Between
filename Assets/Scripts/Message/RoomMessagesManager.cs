@@ -19,13 +19,15 @@ public class RoomMessagesManager : MonoBehaviour
 
     void Start()
     {
-        uiText.SetActive(false);
+
     }
 
     public void SetMessage(int messageIndex, int timer = 5, Action func = null)
     {
         if (coroutine != null)
+        {
             StopMessages();
+        }
         coroutine = StartCoroutine(MessageCoroutine(messageIndex, timer, func));
     }
 
@@ -49,7 +51,7 @@ public class RoomMessagesManager : MonoBehaviour
     {
         uiText.SetActive(false);
 
-        if(coroutine != null)
+        if (coroutine != null)
             StopCoroutine(coroutine);
 
         coroutine = null;
