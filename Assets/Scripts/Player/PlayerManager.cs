@@ -9,6 +9,8 @@ public class PlayerManager : MonoBehaviour
     public EnviromentManager enviromentManager;
     private SpriteRenderer _spriteRenderer;
 
+    public HeartAvailable heartAvailable;
+
     public GameObject interactedItem;
 
     private void Awake()
@@ -47,6 +49,12 @@ public class PlayerManager : MonoBehaviour
             collision.GetComponent<MonsterMovement>().SetPositionToRandomPoint();
             ScenesSingleton.instance.HeartCount--;
             GameObject.Find("HeartCountText").GetComponent<TextMeshProUGUI>().text = $"x {ScenesSingleton.instance.HeartCount}";
+        }
+
+        if (collision.gameObject.tag == "MonsterPhase3")
+        {
+            heartAvailable.RemoveHeart();
+            this.transform.position = new Vector2(14.97f, -41.97f);
         }
 
     }
