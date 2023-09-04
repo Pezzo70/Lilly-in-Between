@@ -21089,7 +21089,7 @@ Camera:
   far clip plane: 1000
   field of view: 40
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 5.625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -22017,7 +22017,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: dad20f81af28b0646beb1f34d4c6264a, type: 2}
+  sharedProfile: {fileID: 11400000, guid: eeeeff76fb08f3d4db306f2a53332d80, type: 2}
 --- !u!4 &1057495279
 Transform:
   m_ObjectHideFlags: 0
