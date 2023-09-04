@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Room.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/LivingRoom.unity
+    guid: d01c05fed23ad2b4abe580635f5a9e48
+  - enabled: 1
+    path: Assets/Scenes/Maze.unity
+    guid: c12ece8e1eeb5e14594775a762f830bf
   m_configObjects: {}
