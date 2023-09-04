@@ -10,6 +10,9 @@ public class PlayerManager : MonoBehaviour
     public EnviromentManager enviromentManager;
     private SpriteRenderer _spriteRenderer;
 
+    public AudioClip[] audioClips;
+    public AudioSource audioSource;
+
     public HeartAvailable heartAvailable;
 
     public GameObject interactedItem;
@@ -77,12 +80,15 @@ public class PlayerManager : MonoBehaviour
             if (ScenesSingleton.instance.HeartCount > 0)
                 ScenesSingleton.instance.HeartCount--;
             GameObject.Find("HeartCountText").GetComponent<TextMeshProUGUI>().text = $"x {ScenesSingleton.instance.HeartCount}";
+
+            audioSource.PlayOneShot(audioClips[Random.Range(0,1)]);
         }
 
         if (collision.gameObject.tag == "MonsterPhase3")
         {
             heartAvailable.RemoveHeart();
             this.transform.position = new Vector2(14.97f, -41.97f);
+            audioSource.PlayOneShot(audioClips[Random.Range(0, 1)]);
         }
 
     }
