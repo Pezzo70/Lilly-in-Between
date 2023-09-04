@@ -29,7 +29,7 @@ public class EnvironmentInteractable : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (_uiElement != null && interactEnabled && roomMessagesManager.coroutine == null)
+        if (_uiElement != null && interactEnabled && roomMessagesManager?.coroutine == null)
             _uiElement.SetActive(true);
         else
             _uiElement.SetActive(false);
