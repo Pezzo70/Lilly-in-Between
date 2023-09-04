@@ -19863,7 +19863,7 @@ PrefabInstance:
     - target: {fileID: 764364253155068929, guid: b67cc45d244ba3f4bbaa64d5f2cff90c, type: 3}
       propertyPath: messages
       value: 
-      objectReference: {fileID: 11400000, guid: 2e9faad71205efb4ca8dca3e4167b63d, type: 2}
+      objectReference: {fileID: 11400000, guid: aa47dddab9c5bd746ae1ba726dacbe12, type: 2}
     - target: {fileID: 8456162622895540984, guid: b67cc45d244ba3f4bbaa64d5f2cff90c, type: 3}
       propertyPath: m_Name
       value: Lilly
@@ -33358,7 +33358,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7ec00cf852129df4a84a2c43c1907f16, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e738b0e66aef7f44ca3dd45d73f5da21, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

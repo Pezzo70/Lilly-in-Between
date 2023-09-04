@@ -36,7 +36,7 @@ public class PlayerManager : MonoBehaviour
         if (collision.gameObject.tag == "Man")
         {
             if (this.transform.position.y > collision.gameObject.transform.position.y)
-                _spriteRenderer.sortingOrder = 6;
+                _spriteRenderer.sortingOrder = 5;
             else if (this.transform.position.y < collision.gameObject.transform.position.y)
                 _spriteRenderer.sortingOrder = 7;
         }
@@ -48,7 +48,7 @@ public class PlayerManager : MonoBehaviour
         if (other.gameObject.tag == "Man")
         {
             if (this.transform.position.y > other.gameObject.transform.position.y)
-                _spriteRenderer.sortingOrder = 6;
+                _spriteRenderer.sortingOrder = 5;
             else if (this.transform.position.y < other.gameObject.transform.position.y)
                 _spriteRenderer.sortingOrder = 7;
         }

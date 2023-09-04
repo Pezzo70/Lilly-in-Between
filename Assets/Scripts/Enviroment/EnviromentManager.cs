@@ -10,6 +10,8 @@ public class EnviromentManager : MonoBehaviour
     public RoomMessagesManager roomMessagesManager;
     public ParticleSystem particle;
 
+    private bool bearAlreadyInteracted = false;
+
     public void Start()
     {
 
@@ -72,6 +74,15 @@ public class EnviromentManager : MonoBehaviour
                 particle.transform.position = interactedItem.transform.position;
                 particle.Play();
                 break;
+            case "Bear":
+                {
+                    if (bearAlreadyInteracted == false)
+                    {
+                        roomMessagesManager.SetMessage(6);
+                        bearAlreadyInteracted = true;
+                    }
+                    break;
+                }
         }
     }
 
