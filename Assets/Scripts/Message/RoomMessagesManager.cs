@@ -26,9 +26,8 @@ public class RoomMessagesManager : MonoBehaviour
         if (coroutine != null)
         {
             StopMessages();
-
-            coroutine = StartCoroutine(MessageCoroutine(messageIndex, timer));
         }
+        coroutine = StartCoroutine(MessageCoroutine(messageIndex, timer));
     }
 
     private IEnumerator MessageCoroutine(int messageIndex, int timer = 6)
